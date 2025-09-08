@@ -19,7 +19,7 @@
    
     
 
-  <title>Deamon Saloon</title>
+  <title>Deamon Salon</title>
 </head>
 
 <body style="background-color: #1B1F34;">
