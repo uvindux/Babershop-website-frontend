@@ -11,7 +11,7 @@
             <p>Join our platform today</p>
         </div>
 
-        <form id="registrationForm">
+        <form id="registrationForm" method="post" action="/Babershop/Server/Checking/login.inc.php">
             <div class="form-group">
                 <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
                 <label for="fullName">Full Name</label>
