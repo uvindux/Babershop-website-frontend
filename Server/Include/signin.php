@@ -19,8 +19,8 @@
             </div>
 
             <div class="form-group">
-                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
-                <label for="phoneNumber">Phone Number</label>
+                <input type="email" id="phoneNumber" name="Email" placeholder="Enter your phone number" required>
+                <label for="Email">Email</label>
                 <div class="error-message">Please enter a valid phone number</div>
             </div>
 

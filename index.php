@@ -182,6 +182,91 @@
 
     </div>
   </section>
+    <section class="booking">
+      <div class="appointment-container">
+        <div class="header">
+            <h1>Book Appointment</h1>
+            <p>Schedule your consultation</p>
+            <div class="company-name">ASA IMS Partners Pte. Ltd.</div>
+        </div>
+
+        <form id="appointmentForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                    <div class="error-message">Required field</div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+                    <div class="error-message">Required field</div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    <div class="error-message">Valid email required</div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" required>
+                    <div class="error-message">Valid phone required</div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="service">Service Type</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select Service</option>
+                        <option value="consultation">Business Consultation</option>
+                        <option value="planning">Strategic Planning</option>
+                        <option value="analysis">Market Analysis</option>
+                        <option value="review">Performance Review</option>
+                        <option value="other">Other Services</option>
+                    </select>
+                    <div class="error-message">Please select a service</div>
+                </div>
+                <div class="form-group">
+                    <label for="appointmentDate">Preferred Date</label>
+                    <input type="date" id="appointmentDate" name="appointmentDate" required>
+                    <div class="error-message">Please select a date</div>
+                </div>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="timeSlot">Available Time Slots</label>
+                <div class="time-slots" id="timeSlots">
+                    <div class="time-slot" data-time="09:00">09:00 AM</div>
+                    <div class="time-slot" data-time="10:30">10:30 AM</div>
+                    <div class="time-slot" data-time="12:00">12:00 PM</div>
+                    <div class="time-slot unavailable" data-time="14:00">02:00 PM</div>
+                    <div class="time-slot" data-time="15:30">03:30 PM</div>
+                    <div class="time-slot" data-time="17:00">05:00 PM</div>
+                </div>
+                <input type="hidden" id="selectedTime" name="selectedTime" required>
+                <div class="error-message">Please select a time slot</div>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="message">Message (Optional)</label>
+                <textarea id="message" name="message" placeholder="Tell us about your requirements or any specific topics you'd like to discuss..."></textarea>
+            </div>
+
+            <button type="submit" class="book-btn" id="bookBtn">
+                Book Appointment
+            </button>
+
+            <div class="success-message" id="successMessage">
+                ✅ Appointment booked successfully! We'll contact you soon to confirm the details.
+            </div>
+        </form>
+    </div>
+
+  </section>
   <section id="members">
     <div class="container">
       <div class="row">
@@ -198,7 +283,7 @@
       <div class="row">
         <div class="col-lg-4 col-sm-6" id="memberPhto">
           <div class="teamMember">
-            <img src="Images/baber1.jpg" alt="">
+            <img src="Images/baber1.jpg" alt="" >
 
             <div class="social-links">
               <a href=""><i class="fa-brands fa-facebook"></i></a>
@@ -441,61 +526,7 @@
       </div>
     </div>
   </section>
-  <section class="booking">
-    <div class="container">
-      <div class="row align-items-center ">
-        <div class="col-12 bookingTopic">
-          <h1>Book Appointment</h1>
-          <p class="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur vel explicabo minus
-            nesciunt earum saepe deserunt assumenda magnam ea esse, nihil, consequuntur placeat ratione voluptates
-            maxime illum porro. Eum, pariatur?</p>
 
-        </div>
-        <div class="col-12">
-          <form class="BookingForm  gy-4">
-            <div class="form-row ">
-              <div class="form-group col-md-6 ">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control " id="inputEmail4" placeholder="Email">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="inputPassword4">Password</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="inputAddress">Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-            </div>
-            <div class="form-group">
-              <label for="inputAddress2">Address 2</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity">
-              </div>
-
-              <div class="form-group col-md-2">
-                <label for="inputZip">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                  Check me out
-                </label>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary mt-3">Sign in</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
   <hr>
 
   

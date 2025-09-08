@@ -653,5 +653,313 @@
             }
         }
        
-    
+    /*Booking form */
+
+        
+        
+        .appointment-container {
+            background: linear-gradient(145deg, #191e36 0%, #1B1F34 100%);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(124, 140, 219, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            width: 100%;
+            max-width: 850px;
+            position: relative;
+            overflow: hidden;
+            margin-left: 358px;
+            margin-top: -70px;
+        }
+
+        .appointment-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #c95c25, #e27931, #7c8cdb);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #ffffff 0%, #c95c25 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            color: #8189b6e1;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .company-name {
+            color: #7c8cdb;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            flex: 1;
+            position: relative;
+        }
+
+        .form-group.full-width {
+            flex: 1;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #7481c1;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(25, 30, 54, 0.8);
+            border: 2px solid rgba(124, 140, 219, 0.2);
+            border-radius: 12px;
+            color: #ffffff;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #9bacce82;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #c95c25;
+            box-shadow: 0 0 0 3px rgba(201, 92, 37, 0.1);
+            background: rgba(25, 30, 54, 0.9);
+            transform: translateY(-1px);
+        }
+
+        .form-group select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23c95c25' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 12px center;
+            background-repeat: no-repeat;
+            background-size: 16px;
+            padding-right: 40px;
+        }
+
+        .form-group select option {
+            background: #191e36;
+            color: #ffffff;
+            padding: 10px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+            max-height: 120px;
+        }
+
+        .form-group.error input,
+        .form-group.error select,
+        .form-group.error textarea {
+            border-color: #ff4757;
+            animation: shake 0.5s ease-in-out;
+        }
+
+        .form-group .error-message {
+            color: #ff4757;
+            font-size: 12px;
+            margin-top: 5px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .form-group.error .error-message {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .time-slot {
+            padding: 12px 8px;
+            background: rgba(25, 30, 54, 0.6);
+            border: 2px solid rgba(124, 140, 219, 0.2);
+            border-radius: 8px;
+            color: #9bacce82;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .time-slot:hover {
+            border-color: #c95c25;
+            background: rgba(201, 92, 37, 0.1);
+            color: #c95c25;
+        }
+
+        .time-slot.selected {
+            border-color: #c95c25;
+            background: linear-gradient(135deg, rgba(201, 92, 37, 0.2), rgba(226, 121, 49, 0.2));
+            color: #c95c25;
+            box-shadow: 0 0 0 2px rgba(201, 92, 37, 0.1);
+        }
+
+        .time-slot.unavailable {
+            opacity: 0.4;
+            cursor: not-allowed;
+            color: #666;
+        }
+
+        .time-slot.unavailable:hover {
+            border-color: rgba(124, 140, 219, 0.2);
+            background: rgba(25, 30, 54, 0.6);
+            color: #666;
+        }
+
+        .book-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #c95c25 0%, #e27931 100%);
+            color: #ffffff;
+            border: none;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 25px;
+        }
+
+        .book-btn:hover {
+            background: linear-gradient(135deg, #d47d4a 0%, #e38443 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(201, 92, 37, 0.4);
+        }
+
+        .book-btn:active {
+            transform: translateY(0);
+        }
+
+        .book-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .book-btn:hover::before {
+            left: 100%;
+        }
+
+        .book-btn:disabled {
+            background: linear-gradient(135deg, #555, #777);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .success-message {
+            background: linear-gradient(135deg, rgba(46, 213, 115, 0.1), rgba(46, 213, 115, 0.05));
+            border: 1px solid rgba(46, 213, 115, 0.3);
+            color: #2ed573;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.4s ease;
+        }
+
+        .success-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .appointment-container {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @media (max-width: 480px) {
+            .appointment-container {
+                padding: 30px 25px;
+                margin: 15px;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .time-slots {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+        }
   

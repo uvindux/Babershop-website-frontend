@@ -266,3 +266,148 @@
                 this.parentElement.classList.remove('error');
             });
         });
+
+        /*Boooking script */
+           const form = document.getElementById('appointmentForm');
+        const dateInput = document.getElementById('appointmentDate');
+        const timeSlots = document.querySelectorAll('.time-slot:not(.unavailable)');
+        const selectedTimeInput = document.getElementById('selectedTime');
+        const bookBtn = document.getElementById('bookBtn');
+        const successMessage = document.getElementById('successMessage');
+
+        // Set minimum date to today
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        dateInput.min = tomorrow.toISOString().split('T')[0];
+
+        // Time slot selection
+        timeSlots.forEach(slot => {
+            slot.addEventListener('click', function() {
+                if (!this.classList.contains('unavailable')) {
+                    timeSlots.forEach(s => s.classList.remove('selected'));
+                    this.classList.add('selected');
+                    selectedTimeInput.value = this.dataset.time;
+                    this.parentElement.parentElement.classList.remove('error');
+                }
+            });
+        });
+
+        // Form validation
+        function validateField(field, validator) {
+            const formGroup = field.parentElement;
+            if (validator(field.value)) {
+                formGroup.classList.remove('error');
+                return true;
+            } else {
+                formGroup.classList.add('error');
+                return false;
+            }
+        }
+
+        // Real-time validation
+        document.getElementById('firstName').addEventListener('blur', function() {
+            validateField(this, (value) => value.trim().length >= 2);
+        });
+
+        document.getElementById('lastName').addEventListener('blur', function() {
+            validateField(this, (value) => value.trim().length >= 2);
+        });
+
+        document.getElementById('email').addEventListener('blur', function() {
+            validateField(this, (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()));
+        });
+
+        document.getElementById('phone').addEventListener('blur', function() {
+            validateField(this, (value) => /^[\+]?[0-9\s\-\(\)]{10,}$/.test(value.trim()));
+        });
+
+        document.getElementById('service').addEventListener('change', function() {
+            validateField(this, (value) => value !== '');
+        });
+
+        document.getElementById('appointmentDate').addEventListener('change', function() {
+            validateField(this, (value) => value !== '');
+        });
+
+        // Remove error styling on input
+        const inputs = form.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('input', function() {
+                this.parentElement.classList.remove('error');
+            });
+        });
+
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const firstName = document.getElementById('firstName');
+            const lastName = document.getElementById('lastName');
+            const email = document.getElementById('email');
+            const phone = document.getElementById('phone');
+            const service = document.getElementById('service');
+            const appointmentDate = document.getElementById('appointmentDate');
+
+            const isFirstNameValid = validateField(firstName, (value) => value.trim().length >= 2);
+            const isLastNameValid = validateField(lastName, (value) => value.trim().length >= 2);
+            const isEmailValid = validateField(email, (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()));
+            const isPhoneValid = validateField(phone, (value) => /^[\+]?[0-9\s\-\(\)]{10,}$/.test(value.trim()));
+            const isServiceValid = validateField(service, (value) => value !== '');
+            const isDateValid = validateField(appointmentDate, (value) => value !== '');
+            
+            // Check if time slot is selected
+            const timeSlotGroup = document.getElementById('selectedTime').parentElement;
+            const isTimeValid = selectedTimeInput.value !== '';
+            if (!isTimeValid) {
+                timeSlotGroup.classList.add('error');
+            } else {
+                timeSlotGroup.classList.remove('error');
+            }
+
+            if (isFirstNameValid && isLastNameValid && isEmailValid && isPhoneValid && 
+                isServiceValid && isDateValid && isTimeValid) {
+                
+                // Show loading state
+                bookBtn.textContent = 'Booking...';
+                bookBtn.disabled = true;
+
+                // Simulate booking process
+                setTimeout(() => {
+                    bookBtn.textContent = 'Appointment Booked!';
+                    successMessage.classList.add('show');
+                    
+                    setTimeout(() => {
+                        form.reset();
+                        timeSlots.forEach(s => s.classList.remove('selected'));
+                        selectedTimeInput.value = '';
+                        bookBtn.textContent = 'Book Appointment';
+                        bookBtn.disabled = false;
+                        successMessage.classList.remove('show');
+                        
+                        // Reset date minimum
+                        const newTomorrow = new Date();
+                        newTomorrow.setDate(newTomorrow.getDate() + 1);
+                        dateInput.min = newTomorrow.toISOString().split('T')[0];
+                    }, 3000);
+                }, 2000);
+            }
+        });
+
+        // Simulate dynamic time slot availability based on date
+        dateInput.addEventListener('change', function() {
+            const selectedDate = new Date(this.value);
+            const dayOfWeek = selectedDate.getDay();
+            
+            // Reset all slots
+            timeSlots.forEach(slot => {
+                slot.classList.remove('unavailable');
+                slot.style.pointerEvents = 'auto';
+            });
+            
+            // Make some slots unavailable on weekends
+            if (dayOfWeek === 0 || dayOfWeek === 6) {
+                timeSlots[0].classList.add('unavailable'); // 9 AM
+                timeSlots[3].classList.add('unavailable'); // 3:30 PM
+            }
+        });
