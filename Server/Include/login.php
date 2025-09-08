@@ -3,17 +3,14 @@
 
 ?>
           <div class="login-container">
-        <div class="logo">
-            <h1>ASA IMS Partners Pte. Ltd.</h1>
-            <p>Professional Services</p>
-        </div>
+        
 
         <div class="welcome-section">
             <h2>Welcome Back</h2>
             <p>Sign in to your account to continue</p>
         </div>
 
-        <form id="loginForm">
+        <form id="loginForm" action="/Babershop/Server/Checking/signin.inc.php" method="post">
             <div class="form-group">
                 <label for="email">Email Address</label>
                 <div class="input-wrapper">
@@ -43,6 +40,7 @@
                 <div class="btn-content">
                     <div class="loading-spinner" id="loadingSpinner"></div>
                     <span id="btnText">Sign In</span>
+                    
                 </div>
             </button>
         </form>
