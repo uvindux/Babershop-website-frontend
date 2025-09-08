@@ -41,7 +41,7 @@
           <a class="nav-link" href="/Babershop/index.php">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="/Babershop/index.php">Team</a>
+          <a class="nav-link " href="/Babershop/index.php">Our Team</a>
         </li>
         <li class="nav-item">
           <a class="nav-link " href="/Babershop/index.php">About</a>
