@@ -1,6 +1,5 @@
 <?php 
- include_once "Server/header.php"
-
+ include_once "./Components/header.php"
 ?>
   <section id="hero">
     <div class="container">
@@ -9,7 +8,7 @@
           <h1>Lets your hair <br> do the talking</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores minima neque fugiat, dolore excepturi
             eligendi.</p>
-            <a href="/Server/Include/signin.inc.php">Click me</a>
+            <a href="../Server/Include/signin.inc.php">Click me</a>
           <button type="button" class="btn btn-warning glow-on" id="btn12">Book Appointment</button>
         </div>
       </div>
@@ -498,8 +497,10 @@
     </div>
   </section>
   <hr>
+
+  
   <?php
-  include_once"Server/footer.php";
+  include_once"./Components/footer.php";
 
   ?>
 
