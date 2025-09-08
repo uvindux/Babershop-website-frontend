@@ -8,7 +8,7 @@
           <h1>Lets your hair <br> do the talking</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores minima neque fugiat, dolore excepturi
             eligendi.</p>
-            <a href="../Server/Include/signin.inc.php">Click me</a>
+           
           <button type="button" class="btn btn-warning glow-on" id="btn12">Book Appointment</button>
         </div>
       </div>

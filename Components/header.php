@@ -53,7 +53,7 @@
           <a class="nav-link " href="/Babershop/index.php">Appointment</a>
         </li>
       
-  <a href="/Babershop/Server/Include/login.inc.php" class="btn btn-outline-warning btn1 ms-lg-3"><span class="buttonName">Login</span></a>
+  <a href="/Babershop/Server/Include/login.php" class="btn btn-outline-warning btn1 ms-lg-3"><span class="buttonName">Login</span></a>
   <a href="/Babershop/Server/Include/signin.php" class="btn btn-outline-warning btn1 ms-lg-3"><span class="buttonName">Register</span></a>
       </ul>
     </div>
