@@ -48,8 +48,10 @@
         <li class="nav-item">
           <a class="nav-link " href="#">Appointment</a>
         </li>
+      
         <button type="button" class="btn btn-outline-warning btn1 ms-lg-3"><span class="buttonName">Login</span></button>
-<button type="button" class="btn btn-outline-warning btn1 ms-lg-3"><span class="buttonName">Register</span></button>
+          <a href="Include/signin.inc.php"><button type="button" class="btn btn-outline-warning btn1 ms-lg-3"><span class="buttonName">Register</span></button></a>
+
       </ul>
     </div>
   </nav>
