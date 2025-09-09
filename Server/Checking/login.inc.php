@@ -7,7 +7,7 @@ if (isset($_POST["submit"])){
           require_once "dbh.inc.php";
           require_once "function.inc.php";
 
-          if(emptyInputSignup($username,$password) !== false){ 
+          if(emptyInputLogin($username,$password) !== false){ 
                     exit();
           }
           else {
