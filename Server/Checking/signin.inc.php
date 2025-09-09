@@ -11,7 +11,6 @@ if (isset($_POST["submit"])){
           $emptyInputs=emptyInputSignup($name,$email,$psw);
           $invalidUid=invalidUid($name);
           $invalidEmail=invalidEmail($email);
-          $pwdMatch=pwdMatch($psw,$pwdMatch);
           $uidExist=uidExists($conn,$name,$email);
 
 
@@ -27,10 +26,7 @@ if (isset($_POST["submit"])){
                     header("Location:../Include/signin.php?error=invalidEmail");
                     exit();
           }
-           if($pwdMatch !== false){
-                    header("Location:../Include/signin.php?error=passwordDontMatch");
-                    exit();
-          }
+          
           if($uidExist !== false){
                     header("Location:../Include/signin.php?error=userExists");
                     exit();
