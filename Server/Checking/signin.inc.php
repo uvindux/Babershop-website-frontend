@@ -7,10 +7,7 @@ if (isset($_POST["submit"])) {
     $email = $_POST["Email"];
     $psw   = $_POST["password"];
 
-    // Debug output
-    // Remove or comment out these lines after debugging
-    // echo "Name: $name, Email: $email, Password: $psw<br>";
-
+    
     if (emptyInputSignup($name, $email, $psw) !== false) {
         die("DEBUG: empty input");
         header("Location: ../Include/signin.php?error=emptyinput");

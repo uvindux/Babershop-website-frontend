@@ -10,7 +10,7 @@
             <p>Sign in to your account to continue</p>
         </div>
 
-        <form id="loginForm" action="/Babershop/Server/Checking/signin.inc.php" method="post">
+        <form id="loginForm" action="/Babershop/Server/Checking/login.inc.php" method="post">
             <div class="form-group">
                 <label for="email">Email Address</label>
                 <div class="input-wrapper">
@@ -36,7 +36,7 @@
                 <a href="#" id="forgotPasswordLink">Forgot your password?</a>
             </div>
 
-            <button type="submit" class="login-btn" id="loginBtn">
+            <button type="submit" class="login-btn" id="loginBtn" name ="submit">
                 <div class="btn-content">
                     <div class="loading-spinner" id="loadingSpinner"></div>
                     <span id="btnText">Sign In</span>
