@@ -1,8 +1,8 @@
 <?php
 
 $serverName="localhost";
-$dbUsername="DeamonHair";
-$dbPassword="t0G4Hh7jNDLtxMok";
+$dbUsername="Babershop";
+$dbPassword="ixqN-L[8PVm-_hRj";
 $dbName="babershop_login";
 
 $conn=mysqli_connect($serverName,$dbUsername,$dbPassword,$dbName);

@@ -11,7 +11,7 @@
             <p>Join our platform today</p>
         </div>
 
-        <form id="registrationForm" method="post" action="/Babershop/Server/Checking/login.inc.php">
+        <form id="registrationForm" method="post" action="/Babershop/Server/Checking/signin.inc.php">
             <div class="form-group">
                 <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
                 <label for="fullName">Full Name</label>
@@ -56,7 +56,7 @@
                 <div class="error-message">Password doesn't meet requirements</div>
             </div>
 
-            <button type="submit" class="submit-btn">Create Account</button>
+            <button type="submit" class="submit-btn" name ="submit">Create Account</button>
         </form>
     </div>
     
