@@ -1,22 +1,22 @@
 <!-- <?php
 
-// if (isset($_POST["submit"])){
-//           $username=$_POST["email"];
-//           $password=$_POST["password"];
+if (isset($_POST["submit"])){
+          $username=$_POST["email"];
+          $password=$_POST["password"];
 
-//           require_once "dbh.inc.php";
-//           require_once "function.inc.php";
+          require_once "dbh.inc.php";
+          require_once "function.inc.php";
 
-//           if(emptyInputSignup($username,$password) !== false){ 
-//                     exit();
-//           }
-//           else {
-//                     LoginUser($conn,$username,$password);
-//           }
+          if(emptyInputSignup($username,$password) !== false){ 
+                    exit();
+          }
+          else {
+                    LoginUser($conn,$username,$password);
+          }
 
-// }
-// else {
+}
+else {
 
-//           header("Location: ../Include/login.php");
+          header("Location: ../Include/login.php");
 
-// }
+}
